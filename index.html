@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روابط التواصل | متجر الاخوين مفتي</title>
+    <!-- استيراد الخط العربي الفاخر Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <!-- استيراد أيقونات FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* تأثير إضاءة خلفية خفيفة */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            background: rgba(56, 189, 248, 0.15);
+            border-radius: 50%;
+            filter: blur(50px);
+            z-index: 0;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .custom-logo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #38bdf8, #2563eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .custom-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .custom-logo i {
+            font-size: 2.2rem;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+            position: relative;
+            z-index: 1;
+        }
+
+        p.bio {
+            font-size: 0.95rem;
+            color: #94a3b8;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 16px 22px;
+            border-radius: 16px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-btn:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-btn .content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .whatsapp-bg {
+            background: rgba(37, 211, 102, 0.15);
+            color: #25d366;
+        }
+
+        .maps-bg {
+            background: rgba(234, 67, 53, 0.15);
+            color: #ea4335;
+        }
+
+        .arrow-icon {
+            font-size: 0.85rem;
+            color: #64748b;
+            transition: transform 0.3s ease;
+        }
+
+        .link-btn:hover .arrow-icon {
+            transform: translateX(-4px);
+            color: #fff;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #64748b;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- شعار المتجر -->
+        <div class="logo-wrapper">
+            <div class="custom-logo">
+                <i class="fas fa-store"></i>
+            </div>
+        </div>
+        
+        <h1>متجر الاخوين مفتي</h1>
+        <p class="bio">أهلاً بك! تواصل معنا عبر الواتساب أو تفضل بزيارة موقعنا بسهولة</p>
+
+        <div class="links-list">
+            <!-- زر الواتساب -->
+            <a href="https://wa.me/212606493766" target="_blank" class="link-btn">
+                <div class="content">
+                    <div class="icon-box whatsapp-bg">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <span>تواصل معنا عبر واتساب</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+
+            <!-- زر خرائط جوجل -->
+            <a href="https://goo.gl/maps/B4KSdzLfnZyKJGXB8?g_st=awb" target="_blank" class="link-btn">
+                <div class="content">
+                    <div class="icon-box maps-bg">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span>موقعنا على خرائط جوجل</span>
+                </div>
+                <i class="fas fa-chevron-left arrow-icon"></i>
+            </a>
+        </div>
+
+        <div class="footer">
+            جميع الحقوق محفوظة &copy; 2026 متجر الاخوين مفتي
+        </div>
+    </div>
+
+</body>
+</html>
