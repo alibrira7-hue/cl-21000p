@@ -1,380 +1,154 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#173d32">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر الأخوين مفتي للملابس التقليدية الرجالية</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-<title>أناقة مغربية | الأزياء التقليدية</title>
+        body {
+            /* خلفية مدمجة أنيقة ذات طابع تراثي رجالي راقٍ مع طبقة عتمة لتبرز النصوص والأزرار */
+            background: linear-gradient(rgba(15, 15, 15, 0.8), rgba(20, 20, 20, 0.9)), 
+                        url('https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(25, 25, 25, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.35); /* إطار ذهبي هادئ يعكس الأصالة */
+            border-radius: 20px;
+            padding: 35px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        /* صورة الشعار أو البروفايل المعبرة عن الطابع الرجالي التقليدي المحتشم */
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #d4af37;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
 
-:root {
-  --green: #173d32;
-  --gold: #b49357;
-  --cream: #f8f5ed;
-  --dark: #26342d;
-}
+        h1 {
+            font-size: 1.6rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
 
-body {
-  font-family: 'Cairo', sans-serif;
-  background: var(--cream);
-  color: var(--dark);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  overflow-x: hidden;
-}
+        .tagline {
+            font-size: 0.95rem;
+            color: #d4af37; /* لون ذهبي ناعم */
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
 
-.page {
-  width: 100%;
-  max-width: 480px;
-  min-height: 100vh;
-  padding: 28px 23px 25px;
-  position: relative;
-  overflow: hidden;
-}
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
 
-/* زخرفة خفيفة */
+        /* تصميم الأزرار لتكون بارزة ومريحة جداً للضغط */
+        .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-.page::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border: 1px solid rgba(180,147,87,.16);
-  border-radius: 50%;
-  top: -150px;
-  right: -120px;
-  pointer-events: none;
-}
+        .link-btn:hover {
+            transform: translateY(-3px);
+        }
 
-.page::after {
-  content: "";
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 1px solid rgba(180,147,87,.12);
-  border-radius: 50%;
-  bottom: 30px;
-  left: -150px;
-  pointer-events: none;
-}
+        .link-btn svg {
+            width: 26px;
+            height: 26px;
+            fill: currentColor;
+        }
 
-header {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
+        /* زر الواتساب بتأثيره المميز */
+        .whatsapp-btn:hover {
+            background: #25d366 !important;
+            border-color: #25d366 !important;
+            color: #fff !important;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
 
-.logo {
-  width: 68px;
-  height: 68px;
-  margin: 0 auto 13px;
-  border: 1px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--gold);
-  font-family: 'Amiri', serif;
-  font-size: 36px;
-  background: rgba(255,255,255,.4);
-}
+        /* زر الموقع الجغرافي */
+        .map-btn:hover {
+            background: #4285F4 !important;
+            border-color: #4285F4 !important;
+            color: #fff !important;
+            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+        }
 
-.brand {
-  font-family: 'Amiri', serif;
-  font-size: 33px;
-  color: var(--green);
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-.subtitle {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: #9b8152;
-  margin-top: 2px;
-}
-
-.line {
-  width: 50px;
-  height: 2px;
-  background: var(--gold);
-  margin: 17px auto 20px;
-}
-
-/* الصورة داخل التصميم */
-
-.hero {
-  position: relative;
-  height: 245px;
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 23px;
-  background: #d9cbb2;
-  box-shadow: 0 9px 25px rgba(38,52,45,.12);
-}
-
-.hero img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-  display: block;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(20,43,34,.65),
-    transparent 65%
-  );
-}
-
-.hero-caption {
-  position: absolute;
-  bottom: 16px;
-  right: 18px;
-  z-index: 1;
-  color: white;
-}
-
-.hero-caption h2 {
-  font-family: 'Amiri', serif;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.hero-caption p {
-  font-size: 11px;
-  color: #f2e6cf;
-}
-
-/* النص الترحيبي */
-
-.intro {
-  text-align: center;
-  margin-bottom: 22px;
-}
-
-.intro h3 {
-  font-family: 'Amiri', serif;
-  color: var(--green);
-  font-size: 25px;
-  margin-bottom: 3px;
-}
-
-.intro p {
-  font-size: 13px;
-  color: #77746a;
-  line-height: 2;
-}
-
-/* الأزرار */
-
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-  position: relative;
-  z-index: 2;
-}
-
-.btn {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 59px;
-  border-radius: 11px;
-  font-size: 15px;
-  font-weight: 700;
-  transition: transform .2s, box-shadow .2s;
-  position: relative;
-}
-
-.btn:active {
-  transform: scale(.97);
-}
-
-.btn svg {
-  width: 21px;
-  height: 21px;
-  flex-shrink: 0;
-}
-
-.whatsapp {
-  background: var(--green);
-  color: white;
-  box-shadow: 0 5px 15px rgba(23,61,50,.19);
-}
-
-.whatsapp:hover {
-  box-shadow: 0 8px 20px rgba(23,61,50,.28);
-}
-
-.location {
-  background: white;
-  color: var(--green);
-  border: 1px solid #e4d8bf;
-  box-shadow: 0 4px 13px rgba(0,0,0,.035);
-}
-
-.location:hover {
-  background: #f2ecdf;
-}
-
-.btn small {
-  font-size: 10px;
-  font-weight: 400;
-  opacity: .75;
-  display: block;
-  margin-top: -2px;
-}
-
-/* لمسة زخرفية */
-
-.quote {
-  text-align: center;
-  margin: 27px 0 20px;
-  color: #92794e;
-  font-family: 'Amiri', serif;
-  font-size: 19px;
-  line-height: 1.8;
-}
-
-.quote span {
-  display: block;
-  font-family: 'Cairo', sans-serif;
-  font-size: 10px;
-  color: #a29b8e;
-  margin-top: 3px;
-}
-
-footer {
-  border-top: 1px solid #e9dfcd;
-  padding-top: 15px;
-  text-align: center;
-  color: #999184;
-  font-size: 10px;
-  letter-spacing: .4px;
-}
-
-footer strong {
-  color: var(--green);
-}
-
-@media (max-width: 360px) {
-  .page { padding: 22px 17px; }
-  .hero { height: 210px; }
-  .brand { font-size: 29px; }
-}
-</style>
+        .footer {
+            margin-top: 30px;
+            font-size: 0.8rem;
+            color: #aaaaaa;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+    </style>
 </head>
-
 <body>
 
-<main class="page">
+    <div class="container">
+        <!-- صورة تعبيرية تراثية رجالية محتشمة وأنيقة (أقمشة وتطريز تقليدي راقٍ) -->
+        <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=300&q=80" alt="شعار متجر الأخوين مفتي" class="profile-img">
+        
+        <h1>متجر الأخوين مفتي</h1>
+        <p class="tagline">للملابس التقليدية الرجالية | فخامة الأناقة والتراث</p>
 
-  <header>
-    <div class="logo">م</div>
+        <div class="links-container">
+            <!-- زر الواتساب -->
+            <a href="https://wa.me/212606493766" target="_blank" class="link-btn whatsapp-btn">
+                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                تواصل عبر الواتساب
+            </a>
 
-    <!-- غيّر اسم المحل هنا -->
-    <h1 class="brand">أناقة مغربية</h1>
+            <!-- زر الموقع الجغرافي -->
+            <a href="https://goo.gl/maps/B4KSdzLfnZyKJGXB8?g_st=awb" target="_blank" class="link-btn map-btn">
+                <svg viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+                موقع المحل على الخريطة
+            </a>
+        </div>
 
-    <p class="subtitle">أصالة • أناقة • تميز</p>
-
-    <div class="line"></div>
-  </header>
-
-  <!-- صورة مدمجة مع التصميم -->
-  <section class="hero">
-    <img
-      src="https://i.etsystatic.com/54993103/r/il/c12006/7715920714/il_fullxfull.7715920714_dfdl.jpg"
-      alt="قفطان مغربي تقليدي بتطريز أنيق"
-      loading="eager"
-    >
-
-    <div class="hero-caption">
-      <h2>جمال الأصالة المغربية</h2>
-      <p>تفاصيل تحكي حكاية الأناقة</p>
+        <div class="footer">
+            متجر الأخوين مفتي &copy; 2026 - جميع الحقوق محفوظة
+        </div>
     </div>
-  </section>
-
-  <section class="intro">
-    <h3>مرحباً بكم في عالم الأناقة</h3>
-    <p>
-      اكتشفوا جمال اللباس التقليدي المغربي،
-      حيث تلتقي الأصالة بالفخامة.
-    </p>
-  </section>
-
-  <!-- روابط التواصل -->
-  <nav class="links">
-
-    <a
-      class="btn whatsapp"
-      href="https://wa.me/212606493766"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.1 1.6 5.9L0 24l6.5-1.7a12 12 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.2-3.5-8.4ZM12.1 21.7c-1.7 0-3.4-.5-4.8-1.3l-.4-.2-3.9 1 1-3.8-.2-.4a9.7 9.7 0 1 1 8.3 4.7Zm5.3-7.3c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.1 8.1 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6s-.7-1.7-1-2.3c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.8 5 .8.3 1.4.5 1.8.6.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/>
-      </svg>
-
-      <span>
-        تواصل معنا عبر واتساب
-        <small>نحن هنا للإجابة عن استفساراتكم</small>
-      </span>
-    </a>
-
-    <a
-      class="btn location"
-      href="https://goo.gl/maps/B4KSdzLfnZyKJGXB8?g_st=awb"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <svg viewBox="0 0 24 24" fill="none"
-        stroke="currentColor" stroke-width="1.8"
-        stroke-linecap="round" stroke-linejoin="round">
-        <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/>
-        <circle cx="12" cy="10" r="2.5"/>
-      </svg>
-
-      <span>
-        موقع المحل على الخريطة
-        <small>يسعدنا استقبالكم وزيارتكم</small>
-      </span>
-    </a>
-
-  </nav>
-
-  <div class="quote">
-    "الأناقة الحقيقية تسكن التفاصيل"
-    <span>جمال التراث المغربي لا يزول</span>
-  </div>
-
-  <footer>
-    <strong>أناقة مغربية</strong>
-    <p>بكل حب، من تراثنا إلى أناقتكم © 2026</p>
-  </footer>
-
-</main>
 
 </body>
 </html>
